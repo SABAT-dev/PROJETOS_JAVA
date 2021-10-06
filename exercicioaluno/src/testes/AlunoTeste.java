@@ -32,14 +32,6 @@ public class AlunoTeste {
 		aluno1.setNomeMae(mae);
 		aluno1.setNomePai(pai);
 		aluno1.setNomeInstituicao(instituicao);
-		aluno1.getDisciplina().setDisciplina1(disciplina1);
-		aluno1.getDisciplina().setNota1(Double.parseDouble(nota1));
-		aluno1.getDisciplina().setDisciplina2(disciplina2);
-		aluno1.getDisciplina().setNota2(Double.parseDouble(nota2));
-		aluno1.getDisciplina().setDisciplina3(disciplina3);
-		aluno1.getDisciplina().setNota3(Double.parseDouble(nota3));
-		aluno1.getDisciplina().setDisciplina4(disciplina4);
-		aluno1.getDisciplina().setNota4(Double.parseDouble(nota4));
 		
 		System.out.println("Nome do aluno: " + aluno1.getNome());
 		System.out.println("Idade: " + aluno1.getIdade());

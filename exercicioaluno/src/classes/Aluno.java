@@ -1,8 +1,11 @@
 package classes;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Aluno {
 	
-	private Disciplina disciplina = new Disciplina();
+	private List<Disciplina> disciplinas = new ArrayList<Disciplina>();
 	
 	private String nome;
 	private int idade;
@@ -83,21 +86,20 @@ public class Aluno {
 		this.nomeInstituicao = nomeInstituicao;
 	}	
 	
-	public Disciplina getDisciplina() {
-		return disciplina;
+	public List<Disciplina> getDisciplinas() {
+		return disciplinas;
 	}
-	
-	public void setDisciplina(Disciplina disciplina) {
-		this.disciplina = disciplina;
+
+	public void setDisciplinas(List<Disciplina> disciplinas) {
+		this.disciplinas = disciplinas;
 	}
 	
 	
 	
 	public double getMediaFinal() {
-		return (disciplina.getNota1() + disciplina.getNota2()
-		+ disciplina.getNota3() + disciplina.getNota4()) / 4;
+		return 0;
 	}
-	
+
 	public boolean getClassificacaoFinal() {
 		double media = this.getMediaFinal();
 		if (media > 7) {
