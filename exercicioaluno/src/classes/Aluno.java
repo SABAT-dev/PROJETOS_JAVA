@@ -5,8 +5,6 @@ import java.util.List;
 
 public class Aluno {
 	
-	private List<Disciplina> disciplinas = new ArrayList<Disciplina>();
-	
 	private String nome;
 	private int idade;
 	private String dataNascimento;
@@ -16,6 +14,8 @@ public class Aluno {
 	private String nomeInstituicao;
 	private double mediaFinal;
 	private boolean classificacaoFinal;
+	
+	private List<Disciplina> disciplinas = new ArrayList<Disciplina>();
 	
 	public Aluno() {
 
@@ -94,10 +94,15 @@ public class Aluno {
 		this.disciplinas = disciplinas;
 	}
 	
-	
-	
 	public double getMediaFinal() {
-		return 0;
+		
+		double somaMediaFinal = 0; 
+		
+		for (Disciplina disciplina : disciplinas) {
+			somaMediaFinal += disciplina.getNota();
+		}
+		
+		return somaMediaFinal / disciplinas.size();
 	}
 
 	public boolean getClassificacaoFinal() {

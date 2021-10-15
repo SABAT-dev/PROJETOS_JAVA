@@ -3,6 +3,7 @@ package testes;
 import javax.swing.JOptionPane;
 
 import classes.Aluno;
+import classes.Disciplina;
 
 public class AlunoTeste {
 	public static void main(String[] args) {
@@ -32,6 +33,30 @@ public class AlunoTeste {
 		aluno1.setNomeMae(mae);
 		aluno1.setNomePai(pai);
 		aluno1.setNomeInstituicao(instituicao);
+		
+		Disciplina disciplina01 = new Disciplina();
+		disciplina01.setDisciplina("Java Web");
+		disciplina01.setNota(8);
+		
+		aluno1.getDisciplinas().add(disciplina01);
+		
+		Disciplina disciplina02 = new Disciplina();
+		disciplina02.setDisciplina("Java Nuvem");
+		disciplina02.setNota(7);
+		
+		aluno1.getDisciplinas().add(disciplina02);
+		
+		Disciplina disciplina03 = new Disciplina();
+		disciplina03.setDisciplina("Projeto de Bloco");
+		disciplina03.setNota(8.2);
+		
+		aluno1.getDisciplinas().add(disciplina03);
+		
+		Disciplina disciplina04 = new Disciplina();
+		disciplina04.setDisciplina("Banco de Dados");
+		disciplina04.setNota(6.9);
+		
+		aluno1.getDisciplinas().add(disciplina04);
 		
 		System.out.println("Nome do aluno: " + aluno1.getNome());
 		System.out.println("Idade: " + aluno1.getIdade());
