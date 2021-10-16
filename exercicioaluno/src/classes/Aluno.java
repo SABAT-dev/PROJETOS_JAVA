@@ -96,7 +96,7 @@ public class Aluno {
 	
 	public double getMediaFinal() {
 		
-		double somaMediaFinal = 0; 
+		double somaMediaFinal = 0.0; 
 		
 		for (Disciplina disciplina : disciplinas) {
 			somaMediaFinal += disciplina.getNota();

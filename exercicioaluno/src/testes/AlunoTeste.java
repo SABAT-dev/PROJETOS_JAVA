@@ -1,5 +1,7 @@
 package testes;
 
+import java.util.Iterator;
+
 import javax.swing.JOptionPane;
 
 import classes.Aluno;
@@ -15,14 +17,6 @@ public class AlunoTeste {
 		String mae = JOptionPane.showInputDialog("Nome da mãe?");
 		String pai = JOptionPane.showInputDialog("Nome da pai?");
 		String instituicao = JOptionPane.showInputDialog("Nome da instituição de ensino?");
-		String disciplina1 = JOptionPane.showInputDialog("Nome da disciplina 1?");
-		String nota1 = JOptionPane.showInputDialog("A nota 1?");
-		String disciplina2 = JOptionPane.showInputDialog("Nome da disciplina 2?");
-		String nota2 = JOptionPane.showInputDialog("A nota 2?");
-		String disciplina3 = JOptionPane.showInputDialog("Nome da disciplina 3?");
-		String nota3 = JOptionPane.showInputDialog("A nota 3?");
-		String disciplina4 = JOptionPane.showInputDialog("Nome da disciplina 4?");
-		String nota4 = JOptionPane.showInputDialog("A nota 4?");
 		
 		Aluno aluno1 = new Aluno();
 		
@@ -34,29 +28,16 @@ public class AlunoTeste {
 		aluno1.setNomePai(pai);
 		aluno1.setNomeInstituicao(instituicao);
 		
-		Disciplina disciplina01 = new Disciplina();
-		disciplina01.setDisciplina("Java Web");
-		disciplina01.setNota(8);
-		
-		aluno1.getDisciplinas().add(disciplina01);
-		
-		Disciplina disciplina02 = new Disciplina();
-		disciplina02.setDisciplina("Java Nuvem");
-		disciplina02.setNota(7);
-		
-		aluno1.getDisciplinas().add(disciplina02);
-		
-		Disciplina disciplina03 = new Disciplina();
-		disciplina03.setDisciplina("Projeto de Bloco");
-		disciplina03.setNota(8.2);
-		
-		aluno1.getDisciplinas().add(disciplina03);
-		
-		Disciplina disciplina04 = new Disciplina();
-		disciplina04.setDisciplina("Banco de Dados");
-		disciplina04.setNota(6.9);
-		
-		aluno1.getDisciplinas().add(disciplina04);
+		for (int posicao = 1; posicao <= 4; posicao++) {
+			
+			Disciplina disciplina = new Disciplina();
+			
+			String nomeDisciplina = JOptionPane.showInputDialog("Nome da disciplina " + posicao + "?");
+			String notaDisciplina = JOptionPane.showInputDialog("Nota da disciplina " + posicao + "?");
+			disciplina.setDisciplina(nomeDisciplina);
+			disciplina.setNota(Double.valueOf(notaDisciplina));
+			aluno1.getDisciplinas().add(disciplina);
+		}
 		
 		System.out.println("Nome do aluno: " + aluno1.getNome());
 		System.out.println("Idade: " + aluno1.getIdade());
