@@ -105,13 +105,18 @@ public class Aluno {
 		return somaMediaFinal / disciplinas.size();
 	}
 
-	public boolean getClassificacaoFinal() {
+	public String getClassificacaoFinal() {
 		double media = this.getMediaFinal();
-		if (media > 7) {
-			return true;
+		if (media >= 5) {
+			if (media >= 7) {
+				return "Aluno(a) aprovado(a)";
+			}	
+			else {
+				return "Aluno(a) de recuperação";
+			}
 		}
 		else {
-			return false;
+			return "Aluno(a) reprovado(a)";
 		}
 	}
 }

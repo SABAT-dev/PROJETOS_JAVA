@@ -1,9 +1,6 @@
 package testes;
 
-import java.util.Iterator;
-
 import javax.swing.JOptionPane;
-
 import classes.Aluno;
 import classes.Disciplina;
 
@@ -46,8 +43,6 @@ public class AlunoTeste {
 			aluno1.getDisciplinas().remove(Integer.valueOf(removerDisciplina).intValue() -1);
 		}
 		
-		
-		
 		System.out.println("Nome do aluno: " + aluno1.getNome());
 		System.out.println("Idade: " + aluno1.getIdade());
 		System.out.println("Data de Nascimento: " + aluno1.getDataNascimento());
@@ -56,6 +51,6 @@ public class AlunoTeste {
 		System.out.println("Nome do pai: " + aluno1.getNomePai());
 		System.out.println("Nome da Instituição: " + aluno1.getNomeInstituicao());
 		System.out.printf("Média final: %.1f\n", aluno1.getMediaFinal());
-		System.out.println("Classificação final: " + (aluno1.getClassificacaoFinal() ? "Aprovado" : "Reprovado"));
+		System.out.println("Classificação final: " + (aluno1.getClassificacaoFinal()));
 	}
 }
