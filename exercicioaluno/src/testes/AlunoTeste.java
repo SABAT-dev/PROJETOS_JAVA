@@ -63,6 +63,9 @@ public class AlunoTeste {
 			
 		for (Aluno aluno : alunos) {
 			if(aluno.getNome().equalsIgnoreCase("simon")) {
+				alunos.remove(aluno);
+				break;
+			} else {
 				System.out.println("Nome do aluno: " + aluno.getNome());
 				System.out.println("Idade: " + aluno.getIdade());
 				System.out.println("Data de Nascimento: " + aluno.getDataNascimento());
@@ -73,7 +76,14 @@ public class AlunoTeste {
 				System.out.printf("Média final: %.1f\n", aluno.getMediaFinal());
 				System.out.println("Classificação final: " + (aluno.getClassificacaoFinal()));	
 				System.out.println(".............................................................");
-			break;
+			}
+		}
+		
+		for (Aluno aluno : alunos) {
+			System.out.println("Alunos que restaram na lista: " + aluno.getNome());
+			System.out.println("Lista de matérias desse(s) aluno(s):");
+			for (Disciplina disciplina : aluno.getDisciplinas()) {
+				System.out.println(disciplina.getDisciplina());
 			}
 		}
 	}
