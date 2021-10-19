@@ -1,6 +1,7 @@
 package testes;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import javax.swing.JOptionPane;
@@ -61,29 +62,27 @@ public class AlunoTeste {
 			alunos.add(aluno1);
 		}
 			
-		for (Aluno aluno : alunos) {
-			if(aluno.getNome().equalsIgnoreCase("simon")) {
-				alunos.remove(aluno);
-				break;
-			} else {
-				System.out.println("Nome do aluno: " + aluno.getNome());
-				System.out.println("Idade: " + aluno.getIdade());
-				System.out.println("Data de Nascimento: " + aluno.getDataNascimento());
-				System.out.println("CPF: " + aluno.getCpf());
-				System.out.println("Nome da mãe: " + aluno.getNomeMae());
-				System.out.println("Nome do pai: " + aluno.getNomePai());
-				System.out.println("Nome da Instituição: " + aluno.getNomeInstituicao());
-				System.out.printf("Média final: %.1f\n", aluno.getMediaFinal());
-				System.out.println("Classificação final: " + (aluno.getClassificacaoFinal()));	
-				System.out.println(".............................................................");
-			}
-		}
-		
-		for (Aluno aluno : alunos) {
-			System.out.println("Alunos que restaram na lista: " + aluno.getNome());
-			System.out.println("Lista de matérias desse(s) aluno(s):");
-			for (Disciplina disciplina : aluno.getDisciplinas()) {
-				System.out.println(disciplina.getDisciplina());
+		for (int posicaoA = 0; posicaoA < alunos.size(); posicaoA++) {
+			
+			Aluno aluno = alunos.get(posicaoA);
+			
+			System.out.println("Nome do aluno: " + aluno.getNome());
+/*			System.out.println("Idade: " + aluno.getIdade());
+			System.out.println("Data de Nascimento: " + aluno.getDataNascimento());
+			System.out.println("CPF: " + aluno.getCpf());
+			System.out.println("Nome da mãe: " + aluno.getNomeMae());
+			System.out.println("Nome do pai: " + aluno.getNomePai());
+			System.out.println("Nome da Instituição: " + aluno.getNomeInstituicao());*/
+			System.out.printf("Média final: %.1f\n", aluno.getMediaFinal());
+			System.out.println("Classificação final: " + (aluno.getClassificacaoFinal()));	
+			System.out.println(".............................................................\n");
+			
+			for (int posicaoD = 0; posicaoD < aluno.getDisciplinas().size(); posicaoD++) {
+				
+				Disciplina disciplina = aluno.getDisciplinas().get(posicaoD);
+				
+				System.out.println("Disciplina: " + disciplina.getDisciplina() + " | Nota: " + disciplina.getNota() + "\n");
+				System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n");
 			}
 		}
 	}
