@@ -1,7 +1,6 @@
 package testes;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 import javax.swing.JOptionPane;
@@ -34,7 +33,7 @@ public class AlunoTeste {
 			aluno1.setNomePai(pai);
 			aluno1.setNomeInstituicao(instituicao);*/
 						
-			for (int posicaoDisciplinas = 1; posicaoDisciplinas <= 4; posicaoDisciplinas++) {
+			for (int posicaoDisciplinas = 1; posicaoDisciplinas <= 1; posicaoDisciplinas++) {
 					
 				Disciplina disciplina = new Disciplina();
 					
@@ -65,6 +64,22 @@ public class AlunoTeste {
 		for (int posicaoA = 0; posicaoA < alunos.size(); posicaoA++) {
 			
 			Aluno aluno = alunos.get(posicaoA);
+			
+			if(aluno.getNome().equalsIgnoreCase("Simon")) {
+				
+				Aluno trocarA = new Aluno();
+				trocarA.setNome("Aluno trocado");
+				
+				Disciplina disciplinaNova = new Disciplina();
+				disciplinaNova.setDisciplina("front-end");
+				disciplinaNova.setNota(8.2);
+				
+				trocarA.getDisciplinas().add(disciplinaNova);
+				
+				alunos.set(posicaoA, trocarA);
+				aluno = alunos.get(posicaoA);
+				
+			}
 			
 			System.out.println("Nome do aluno: " + aluno.getNome());
 /*			System.out.println("Idade: " + aluno.getIdade());
