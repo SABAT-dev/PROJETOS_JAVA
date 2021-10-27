@@ -1,4 +1,4 @@
-package classes;
+package exercicioaluno.classes;
 
 public class Disciplina {
 	private String disciplina;

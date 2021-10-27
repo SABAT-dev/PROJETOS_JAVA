@@ -1,12 +1,12 @@
-package testes;
+package exercicioaluno.testes;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.JOptionPane;
 
-import classes.Aluno;
-import classes.Disciplina;
+import exercicioaluno.classes.Aluno;
+import exercicioaluno.classes.Disciplina;
 
 public class AlunoTeste {
 	public static void main(String[] args) {

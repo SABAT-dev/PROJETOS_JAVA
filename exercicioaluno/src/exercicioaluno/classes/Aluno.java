@@ -1,7 +1,9 @@
-package classes;
+package exercicioaluno.classes;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import exercicioaluno.constantes.AlunoConstante;
 
 public class Aluno {
 	
@@ -109,14 +111,14 @@ public class Aluno {
 		double media = this.getMediaFinal();
 		if (media >= 5) {
 			if (media >= 7) {
-				return "Aluno(a) aprovado(a)";
+				return AlunoConstante.APROVADO;
 			}	
 			else {
-				return "Aluno(a) de recuperação";
+				return AlunoConstante.RECUPERACAO;
 			}
 		}
 		else {
-			return "Aluno(a) reprovado(a)";
+			return AlunoConstante.REPROVADO;
 		}
 	}
 }
