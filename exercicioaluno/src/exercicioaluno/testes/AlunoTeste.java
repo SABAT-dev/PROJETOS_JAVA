@@ -1,6 +1,7 @@
 package exercicioaluno.testes;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import javax.swing.JOptionPane;
@@ -14,9 +15,7 @@ public class AlunoTeste {
 		
 		List<Aluno> alunos = new ArrayList<Aluno>();
 		
-		List<Aluno> alunosAprovados = new ArrayList<Aluno>();
-		List<Aluno> alunosRecuperacao = new ArrayList<Aluno>();
-		List<Aluno> alunosReprovados = new ArrayList<Aluno>();
+		HashMap<String, List<Aluno>> maps = new HashMap<String, List<Aluno>>();
 			
 		for (int numeroAlunos = 1; numeroAlunos <= 4; numeroAlunos++) {
 			
@@ -65,29 +64,33 @@ public class AlunoTeste {
 				
 			alunos.add(aluno1);
 		}
-			
+		
+		maps.put(AlunoConstante.APROVADO, new ArrayList<Aluno>());
+		maps.put(AlunoConstante.RECUPERACAO, new ArrayList<Aluno>());
+		maps.put(AlunoConstante.REPROVADO, new ArrayList<Aluno>());
+		
 		for (Aluno aluno : alunos) {
 			if(aluno.getClassificacaoFinal().equalsIgnoreCase(AlunoConstante.APROVADO)) {
-				alunosAprovados.add(aluno);
+				maps.get(AlunoConstante.APROVADO).add(aluno);
 			} else if (aluno.getClassificacaoFinal().equalsIgnoreCase(AlunoConstante.RECUPERACAO)) {
-				alunosRecuperacao.add(aluno);
+				maps.get(AlunoConstante.RECUPERACAO).add(aluno);
 			} else {
-				alunosReprovados.add(aluno);
+				maps.get(AlunoConstante.REPROVADO).add(aluno);
 			}
 		}
 		
 		System.out.println("------------LISTA DOS APROVADOS------------");
-		for (Aluno aluno : alunosAprovados) {
+		for (Aluno aluno : maps.get(AlunoConstante.APROVADO)) {
 			System.out.println("Aluno: " + aluno.getNome() + " | Média: " + aluno.getMediaFinal() + "\n");
 		}
 		
 		System.out.println("------------LISTA DOS DE RECUPERAÇÃO------------");
-		for (Aluno aluno : alunosRecuperacao) {
+		for (Aluno aluno : maps.get(AlunoConstante.RECUPERACAO)) {
 			System.out.println("Aluno: " + aluno.getNome() + " | Média: " + aluno.getMediaFinal() + "\n");
 		}
 		
 		System.out.println("------------LISTA DOS REPROVADOS------------");
-		for (Aluno aluno : alunosReprovados) {
+		for (Aluno aluno : maps.get(AlunoConstante.REPROVADO)) {
 			System.out.println("Aluno: " + aluno.getNome() + " | Média: " + aluno.getMediaFinal() + "\n");
 		}
 		
