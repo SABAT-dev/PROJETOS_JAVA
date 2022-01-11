@@ -89,6 +89,14 @@ public class Aluno extends Pessoa {
 		this.disciplinas = disciplinas;
 	}
 	
+	@Override
+	public String toString() {
+		return "Aluno [nomeInstituicao=" + nomeInstituicao + ", mediaFinal=" + mediaFinal + ", classificacaoFinal="
+				+ classificacaoFinal + ", disciplinas=" + disciplinas + ", nome=" + nome + ", idade=" + idade
+				+ ", dataNascimento=" + dataNascimento + ", cpf=" + cpf + ", nomeMae=" + nomeMae + ", nomePai="
+				+ nomePai + "]";
+	}
+
 	public double getMediaFinal() {
 		
 		double somaMediaFinal = 0.0; 
