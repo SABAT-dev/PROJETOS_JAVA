@@ -5,14 +5,7 @@ import java.util.List;
 
 import exercicioaluno.constantes.AlunoConstante;
 
-public class Aluno {
-	
-	private String nome;
-	private int idade;
-	private String dataNascimento;
-	private String cpf;
-	private String nomeMae;
-	private String nomePai;
+public class Aluno extends Pessoa {
 	private String nomeInstituicao;
 	private double mediaFinal;
 	private boolean classificacaoFinal;
