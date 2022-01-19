@@ -122,5 +122,10 @@ public class Aluno extends Pessoa {
 			return AlunoConstante.REPROVADO;
 		}
 	}
+
+	@Override
+	public double salario() {
+		return 559.90;
+	}
 	
 }

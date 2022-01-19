@@ -26,5 +26,9 @@ public class HerancaTeste {
 		System.out.println(aluno);
 		System.out.println(diretor);
 		System.out.println(secretario);
+		
+		System.out.println("Salário do Aluno: " + aluno.salario());
+		System.out.println("Salário do Diretor: " + diretor.salario());
+		System.out.println("Salário do Secretário: " + secretario.salario());
 	}
 }
