@@ -1,9 +1,13 @@
 package exercicioaluno.classes;
 
-public class Secretario extends Pessoa{
+import exercicioaluno.interfaces.PermitirAcesso;
+
+public class Secretario extends Pessoa implements PermitirAcesso{
 	private String registro;
 	private String nivelCargo;
 	private String experiencia;
+	private String login;
+	private String senha;
 	
 	public String getRegistro() {
 		return registro;
@@ -22,6 +26,18 @@ public class Secretario extends Pessoa{
 	}
 	public void setExperiencia(String experiencia) {
 		this.experiencia = experiencia;
+	}	
+	public String getLogin() {
+		return login;
+	}
+	public void setLogin(String login) {
+		this.login = login;
+	}
+	public String getSenha() {
+		return senha;
+	}
+	public void setSenha(String senha) {
+		this.senha = senha;
 	}
 	
 	@Override
@@ -33,6 +49,11 @@ public class Secretario extends Pessoa{
 	@Override
 	public double salario() {
 		return 1700.75;
+	}
+	
+	@Override
+	public boolean autenticar() {
+		return login.equals("root") && senha.equals("0000");
 	}
 		
 }

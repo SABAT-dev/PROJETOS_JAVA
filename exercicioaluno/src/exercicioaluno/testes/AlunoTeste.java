@@ -8,6 +8,7 @@ import javax.swing.JOptionPane;
 
 import exercicioaluno.classes.Aluno;
 import exercicioaluno.classes.Disciplina;
+import exercicioaluno.classes.Secretario;
 import exercicioaluno.constantes.AlunoConstante;
 
 public class AlunoTeste {
@@ -20,7 +21,11 @@ public class AlunoTeste {
 		String login = JOptionPane.showInputDialog("Digite o seu login");
 		String senha = JOptionPane.showInputDialog("Digite a sua senha");
 		
-		if(login.equalsIgnoreCase("root") && senha.equalsIgnoreCase("0000")) {
+		Secretario secretario = new Secretario();
+		secretario.setLogin(login);
+		secretario.setSenha(senha);
+		
+		if(secretario.autenticar()) {
 						
 			for (int numeroAlunos = 1; numeroAlunos <= 4; numeroAlunos++) {
 				
@@ -99,6 +104,8 @@ public class AlunoTeste {
 				System.out.println("Aluno: " + aluno.getNome() + " | Média: " + aluno.getMediaFinal() + "\n");
 			}
 	
+		} else {
+			JOptionPane.showConfirmDialog(null, "Acesso não permitido");
 		}
 		
 	}
