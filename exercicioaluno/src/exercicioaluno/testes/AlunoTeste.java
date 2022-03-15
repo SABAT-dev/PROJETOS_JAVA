@@ -21,11 +21,7 @@ public class AlunoTeste {
 		String login = JOptionPane.showInputDialog("Digite o seu login");
 		String senha = JOptionPane.showInputDialog("Digite a sua senha");
 		
-		Secretario secretario = new Secretario();
-		secretario.setLogin(login);
-		secretario.setSenha(senha);
-		
-		if(secretario.autenticar()) {
+		if(new Secretario().autenticar(login, senha)) {
 						
 			for (int numeroAlunos = 1; numeroAlunos <= 4; numeroAlunos++) {
 				
