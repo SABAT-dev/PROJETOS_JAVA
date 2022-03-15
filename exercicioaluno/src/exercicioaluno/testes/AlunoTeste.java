@@ -10,6 +10,7 @@ import exercicioaluno.classes.Aluno;
 import exercicioaluno.classes.Disciplina;
 import exercicioaluno.classes.Secretario;
 import exercicioaluno.constantes.AlunoConstante;
+import exercicioaluno.interfaces.PermitirAcesso;
 
 public class AlunoTeste {
 	public static void main(String[] args) {
@@ -21,7 +22,9 @@ public class AlunoTeste {
 		String login = JOptionPane.showInputDialog("Digite o seu login");
 		String senha = JOptionPane.showInputDialog("Digite a sua senha");
 		
-		if(new Secretario().autenticar(login, senha)) {
+		PermitirAcesso permitirAcesso = new Secretario(login, senha);
+		
+		if(permitirAcesso.autenticar()) {
 						
 			for (int numeroAlunos = 1; numeroAlunos <= 4; numeroAlunos++) {
 				
